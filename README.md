@@ -30,6 +30,17 @@ gpg --list-keys
 ```
 Note the Hexacode.
 
+#### To Trust the key
+```
+gpg --edit-key <keyID>
+
+> fpr
+
+> trust
+
+>save
+
+```
 #### Initialise  git repo
 
 ```
@@ -69,7 +80,7 @@ echo test >  my.key
 git-crypt status
 ```
 
-#### commit and push the code then 
+#### Commit and push the code then 
 
 #### Lock & Unlock
 
@@ -83,5 +94,7 @@ git-crypt lock
 ```
 
 NOTE: it is overall idea. to get more info please refer gpg and git-crypt repo.
+
+To add another user you can add his pub key to the ring and trust it later run git-crypt  add-gpg-user to allow the user to decrypt using his private key.
 
 
